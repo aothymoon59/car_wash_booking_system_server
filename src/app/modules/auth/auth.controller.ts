@@ -2,7 +2,7 @@ import httpStatus from 'http-status';
 import { AuthServices } from './auth.service';
 import sendResponse from '../../utils/sendResponse';
 import catchAsync from '../../utils/catchAsync';
-
+// sign up user
 const signUpUser = catchAsync(async (req, res) => {
   const result = await AuthServices.signUpUserIntoDB(req.body);
   // send response
@@ -13,7 +13,7 @@ const signUpUser = catchAsync(async (req, res) => {
     data: result,
   });
 });
-
+// login user
 const loginUser = catchAsync(async (req, res) => {
   const result = await AuthServices.loginUser(req.body);
   // send response
